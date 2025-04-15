@@ -1,3 +1,4 @@
+
 package telas;
 
 import java.sql.SQLException;
@@ -7,7 +8,7 @@ import java.util.logging.Logger;
 public class FormTelaMenu extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormTelaInicio
+     * Creates new form FormTelaMenu
      */
     public FormTelaMenu() {
         initComponents();
@@ -33,12 +34,7 @@ public class FormTelaMenu extends javax.swing.JFrame {
         btnEstoque = new javax.swing.JButton();
         btnCadastrarVenda = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
-        setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
-        setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -175,25 +171,41 @@ public class FormTelaMenu extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 799, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 4, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 5, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 556, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        FormTelaLogin login = new FormTelaLogin();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnCadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarProdutoActionPerformed
         FormTelaCadastro cadastro = new FormTelaCadastro();
         cadastro.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_btnCadastrarProdutoActionPerformed
-
-    private void btnCadastrarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVendaActionPerformed
-        FormTelaVenda venda = new FormTelaVenda();
-        venda.setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_btnCadastrarVendaActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
         FormTelaEstoque estoque = null;
@@ -204,15 +216,13 @@ public class FormTelaMenu extends javax.swing.JFrame {
         }
         estoque.setVisible(true);
         this.dispose();
-
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-        FormTelaLogin login = new FormTelaLogin();
-        login.setVisible(true);
+    private void btnCadastrarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVendaActionPerformed
+        FormTelaVenda venda = new FormTelaVenda();
+        venda.setVisible(true);
         this.dispose();
-
-    }//GEN-LAST:event_btnSairActionPerformed
+    }//GEN-LAST:event_btnCadastrarVendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,7 +249,6 @@ public class FormTelaMenu extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FormTelaMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
